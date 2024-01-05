@@ -1,0 +1,156 @@
+
+<div class="container">
+    <div doz_type="row" doz_grid="12" class="doz_row"><div doz_type="grid" doz_grid="12" class="col-dz col-dz-12"><div doz_type="widget" id="w2024010510f0f3c73221f"><div class="_widget_data " data-widget-name="입력폼" data-widget-type="form" data-widget-anim="none" data-widget-anim-duration="0.7" data-widget-anim-delay="0" data-widget-parent-is-mobile="N">	<div class="form-widget widget  _form-widget"><!--deadline 붙으면 deadline-bar,deadline-opacity block상태-->
+  
+  
+  
+            <div class="deadline-opacity">
+                <form id="addFormw2024010510f0f3c73221f" method="POST" target="hidden_frame">
+                    <input type="hidden" name="board_code" value="b20240105abe9b2cde7373">
+                    <input type="hidden" name="unit_code" value="u202401056597acd754cc5">
+                    <input type="hidden" name="widget_code" value="w2024010510f0f3c73221f">
+                    <input type="hidden" name="board_name" value="이름 없는 입력폼#1">
+                    <div id="input_form_token_obj">
+                        <input type="hidden" name="write_token" class="_tk_obj" value="vaepBqTm+Z/Em8qzOxScJWTmds+qIpxrZSRszr5K6OR1g2ZKoOzIKN9MJlKXRyz3E67O2amfylzMyopgCsJByQO5IJGaZedSX/+IBV+fIyV+nQiDo8GQ/83DjazS3pgh">
+                        <input type="hidden" name="write_token_key" class="_tk_key_obj" value="4782">
+                    </div>
+                    <!--input type="hidden" name="results_permit" value="N"-->
+                                <div class="form-group" id="checkbox_044d1e9a07808" check-limit="0"><label for="" class="control-label">회계세무</label>
+                                    <div class="checkbox checkbox-styled"><label><input type="checkbox" class="_checkbox" name="checkbox_044d1e9a07808[]" id="option1" onclick="updateTotal(); updateTotalOnUncheck('option1', 10)" value="회계 서비스 1" autocomplete="off"><span>회계 서비스 1</span></label></div>
+                                      <div class="checkbox checkbox-styled"><label><input type="checkbox" class="_checkbox" name="checkbox_044d1e9a07808[]" id="option2" onclick="updateTotal(); updateTotalOnUncheck('option2', 20)" value="회계 서비스 2" autocomplete="off"><span>회계 서비스 2</span></label></div>
+                                      <div class="checkbox checkbox-styled"><label><input type="checkbox" class="_checkbox" name="checkbox_044d1e9a07808[]" id="option3" onclick="updateTotal(); updateTotalOnUncheck('option3', 30)" value="세무 서비스 1" autocomplete="off"><span>세무 서비스 1</span></label></div>
+                                      <div class="checkbox checkbox-styled"><label><input type="checkbox" class="_checkbox" name="checkbox_044d1e9a07808[]" id="option4" onclick="updateTotal(); updateTotalOnUncheck('option4', 40)" value="세무 서비스 2" autocomplete="off"><span>세무 서비스 2</span></label></div>
+                                </div>	
+                                                           
+                                <div class="form-group" id="checkbox_53vsA21l35" check-limit="0"><label for="" class="control-label">IT</label>
+                                    <div class="checkbox checkbox-styled"><label><input type="checkbox" class="_checkbox" name="checkbox_53vsA21l35[]" id="option5" onclick="updateTotal(); updateTotalOnUncheck('option5', 50)" value="IT 서비스 1" autocomplete="off"><span>IT 서비스 1</span></label></div>
+                                    <div class="checkbox checkbox-styled"><label><input type="checkbox" class="_checkbox" name="checkbox_53vsA21l35[]" id="option6" onclick="updateTotal(); updateTotalOnUncheck('option6', 60)" value="IT 서비스 2" autocomplete="off"><span>IT 서비스 2</span></label></div>
+                                    <div class="checkbox checkbox-styled"><label><input type="checkbox" class="_checkbox" name="checkbox_53vsA21l35[]" id="option7" onclick="updateTotal(); updateTotalOnUncheck('option7', 70)" value="IT 서비스 3" autocomplete="off"><span>IT 서비스 3</span></label></div>
+                                </div>            
+                                
+                </form>
+                <h2>총 가격: <span id="totalPrice">$0</span></h2>
+
+
+                <div class="form text-center">
+                    <a href="javascript:;" class="btn btn-primary _input_form_submit" onclick="SITE_FORM.confirmInputForm('w2024010510f0f3c73221f','Y');">작성</a>
+                </div>
+            </div>
+
+            <!-- 입력성공 alert 시작 -->
+            <div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" class="modal in modal_site_alert" style="display: none;" id="input_form_complete_modal_w2024010510f0f3c73221f">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="layer_pop">
+                            <div class="container-fluid">
+                                <p class="text-center" style="margin-bottom: 0;word-break: break-all;">
+                                    작성하신대로 접수하시겠습니까?							</p>
+                            </div>
+                            <div class="btn-group-justified">
+                                                                <a href="javascript:" class="btn" onclick="SITE_FORM.hideModal();">취소</a>
+                                    <a href="javascript:" class="btn right" onclick="SITE_FORM.submit('w2024010510f0f3c73221f');">확인</a>
+                                                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // 입력성공 alert 종료 -->
+  
+            <!-- 압력실패시 alert -->
+            <div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" class="modal in modal_site_alert" style="display: none;" id="input_form_error_modal_w2024010510f0f3c73221f">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="layer_pop">
+                            <div class="container-fluid">
+                                <p class="text-center" style="margin-bottom: 0;">
+                                </p>
+                            </div>
+                            <div class="btn-group-justified">
+                                <a href="javascript:" class="btn right" onclick="SITE_FORM.hideModal();">확인</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+  
+        </div>
+  
+  
+        </div></div></div></div>
+  </div>
+  
+  <table>
+    <tr>
+        <td><label for="price1">니트</label></td>
+        <td>12000</td>
+        <td><input type="checkbox" name="price1" id="price1" 
+            value="12000"></td>
+    </tr>
+    <tr>
+        <td><label for="price2">맨투맨</label></td>
+        <td>10000</td>
+        <td><input type="checkbox" name="price2" id="price2" 
+            value="10000"></td>
+    </tr>
+    <tr>
+        <td><label for="price3">후드티</label></td>
+        <td>15000</td>
+        <td><input type="checkbox" name="price3" id="price3" 
+            value="15000"></td>
+    </tr>
+    <tr>
+        <td><input type="text" name="total" id="total" value="0" readonly="readonly"></td>
+    </tr>
+</table>
+  
+
+<script>
+    let total = 0;
+
+    function updateTotal() {
+        console.log("updateTotal triggered")
+    
+        if (document.getElementById('option1').checked) {
+            total += 10;
+        }else if  (document.getElementById('option2').checked) {
+            total += 20;
+        }
+        else if  (document.getElementById('option3').checked) {
+            total += 30;
+        }
+        else if  (document.getElementById('option4').checked) {
+            total += 40;
+        }
+        else if  (document.getElementById('option5').checked) {
+            total += 50;
+        }
+        else if  (document.getElementById('option6').checked) {
+            total += 60;
+        }
+        else if  (document.getElementById('option7').checked) {
+            total += 70;
+        }
+        // 다른 옵션들에 대한 가격 계산 추가
+    
+        document.getElementById('totalPrice').innerText = '$' + total;
+    }
+
+    function Calculator(){
+        let total = Number(document.getElementById("totalPrice").defaultValue);
+
+        for(let i=1; i<=3; i++){
+            let chkbox = document.getElementById("option"+i);
+            if(chkbox.checked){
+                total += Number(chkbox.value);
+            }
+            document.getElementById("totalPrice").value = total;
+        }
+
+    }
+
+    for(let i = 1; i <= 3; i++){
+            let check = document.getElementById("option"+i);
+            check.onclick = Calculator;
+        }
+
+</script>

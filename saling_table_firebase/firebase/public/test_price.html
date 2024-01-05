@@ -1,0 +1,25 @@
+<input type="checkbox" name="price1" id="option1" value="12000">
+<input type="checkbox" name="price2" id="option2" value="10000">
+<input type="checkbox" name="price3" id="option3" value="15000">
+
+<input type="text" name="total" id="totalPrice" value="0" readonly="readonly">
+
+<script>
+    function Calculator(){
+        console.log("Calculator On")
+        let total = Number(document.getElementById("totalPrice").defaultValue);
+
+        for(let i=1; i<=3; i++){
+            let chkbox = document.getElementById("option"+i);
+            if(chkbox.checked){
+                total += Number(chkbox.value);
+            }
+            document.getElementById("totalPrice").value = total;
+        }
+
+    }
+    for(let i = 1; i <= 3; i++){
+            let check = document.getElementById("option"+i);
+            check.onclick = Calculator;
+        }
+</script>
