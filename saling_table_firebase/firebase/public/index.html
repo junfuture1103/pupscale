@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Animated Checkboxes and Radio Buttons with SVG</title>
+		<meta name="description" content="Animated Checkboxes and Radio Buttons with SVG: Using SVG for adding some fancy 'check' animations to form inputs" />
+		<meta name="keywords" content="animated checkbox, svg, radio button, styled checkbox, css, pseudo element, form, animated svg" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" href="css/styles.css">
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<!-- Top Navigation -->
+			<div class="codrops-top clearfix">
+				<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/SectionSeparators/"><span>Pupple+로 돌아가기</span></a>
+				<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=16637"><span>Pupple 사이트방문</span></a></span>
+			</div>
+			<header>
+				<h1>펍스케일 메뉴판입니다.</span></h1>
+				<p>원하시는 회계 서비스를 선택하세요</p>	
+			</header>
+			<section>
+				
+				<div class="container">
+					<form class="ac-custom ac-checkbox ac-cross" autocomplete="off">
+						<h2>펍스케일 테스트 설문</h2>
+						<ul>							
+							<li><input type="checkbox" id="option1" onclick="updateTotal()"><label for="option1">옵션 1 - $10</label></li>
+							<li><input type="checkbox" id="option2" onclick="updateTotal()"><label for="option2">옵션 2 - $20</label></li>
+							<li><input type="checkbox" id="option3" onclick="updateTotal()"><label for="option3">옵션 3 - $30</label></li>
+							<li><input type="checkbox" id="option4" onclick="updateTotal()"><label for="option4">옵션 4 - $40</label></li>
+						</ul>
+						<br><br>
+
+						<h2>총 가격: <span id="totalPrice">$0</span></h2>
+					</form>
+
+					</div>
+
+			</section>
+
+			
+			
+			<section class="related">
+				<p>test for pupscal:</p>
+				<p><a href="http://tympanus.net/Tutorials/AnimatedBorderMenus/">전문가 상담하러가기</a></p>
+				<p><a href="http://tympanus.net/Development/CreativeButtons/">인재매칭 받기</a></p>
+			</section>
+		</div><!-- /container -->
+		<script src="js/svgcheckbx.js"></script>
+		<script src="js/total_count.js"></script>
+	</body>
+</html>
