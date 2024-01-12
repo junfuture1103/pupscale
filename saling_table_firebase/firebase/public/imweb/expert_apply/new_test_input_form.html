@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이력서 양식</title>
+
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        #popupForm {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+    <h2> test </h2>
+
+    <form id="resumeForm" onsubmit="submitForm(event)">
+        <label for="name">이름:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="experience">경력:</label>
+        <input type="text" id="experience" name="experience" required><br>
+
+        <label for="detailedExperience">상세 경력:</label><br>
+        <textarea id="detailedExperience" name="detailedExperience" rows="4" cols="50" required></textarea><br>
+
+        <label for="education">학력:</label>
+        <input type="text" id="education" name="education" required><br>
+
+        <label for="skills">기술 및 역량:</label>
+        <input type="text" id="skills" name="skills" required><br>
+
+        <label for="selfIntroduction">자기 소개:</label><br>
+        <textarea id="selfIntroduction" name="selfIntroduction" rows="4" cols="50" required></textarea><br>
+
+        <label for="contact">연락처:</label>
+        <input type="text" id="contact" name="contact" required><br>
+
+        <div id="experienceTableDiv">
+            <h2>경력사항 테이블</h2>
+            <table id="experienceTable">
+                <thead>
+                    <tr>
+                        <th>구분</th>
+                        <th>기간</th>
+                        <th>내용</th>
+                        <th>파일첨부</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 경력사항이 추가될 때 여기에 추가될 것입니다. -->
+                </tbody>
+            </table>
+        </div>
+        <!-- 이 부분이 추가되었습니다 -->
+        <label for="tableContent">테이블 내용:</label><br>
+        <textarea id="tableContent" name="tableContent" rows="4" cols="50" readonly></textarea><br>
+
+        <input type="submit" value="제출">
+    </form>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // 기본 제출 동작 막기
+
+            // 양식에서 입력된 정보 가져오기
+            const name = document.getElementById("name").value;
+            const experience = document.getElementById("experience").value;
+            const detailedExperience = document.getElementById("detailedExperience").value;
+            const education = document.getElementById("education").value;
+            const skills = document.getElementById("skills").value;
+            const selfIntroduction = document.getElementById("selfIntroduction").value;
+            const contact = document.getElementById("contact").value;
+
+            // 테이블 내용 가져오기
+            const table = document.getElementById("experienceTable");
+            const rows = table.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+            const tableData = [];
+
+            for (let i = 0; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName("td");
+                const rowData = [];
+
+                for (let j = 0; j < cells.length; j++) {
+                    rowData.push(cells[j].innerText);
+                }
+
+                tableData.push(rowData);
+            }
+            
+            // 테이블 내용을 문자열로 변환
+            const tableContentString = JSON.stringify(tableData);
+
+            // 테이블 내용을 textarea에 삽입
+            document.getElementById("tableContent").value = tableContentString;
+
+
+            // 여기서 서버로 데이터 전송 또는 다른 작업 수행
+            // 실제로는 서버 측에서 데이터를 처리해야 합니다.
+
+            // 경고창으로 입력된 정보와 테이블 내용 보여주기 (테스트용)
+            alert(
+                `이름: ${name}\n경력: ${experience}\n상세 경력: ${detailedExperience}\n학력: ${education}\n기술 및 역량: ${skills}\n자기 소개: ${selfIntroduction}\n연락처: ${contact}\n\n테이블 내용:\n${JSON.stringify(tableData)}`
+            );
+        }
+    </script>
+            
+    <div>
+        <h2>경력사항 테이블</h2>
+        <button type="button" onclick="openPopupForm()">경력사항 추가</button>
+        <div id="popupForm">
+            <h2>경력사항 입력</h2>
+            <form id="careerForm">
+                <label for="division">구분:</label>
+                <select id="division" name="division">
+                    <option value="회사">회사</option>
+                    <option value="프리랜서">프리랜서</option>
+                </select>
+                <br>
+
+                <label for="startDate">기간:</label>
+                <input type="date" id="startDate" name="startDate">
+                <label for="endDate"> - </label>
+                <input type="date" id="endDate" name="endDate">
+                <br>
+
+                <label for="content">내용:</label>
+                <textarea id="content" name="content" rows="4" cols="50"></textarea>
+                <br>
+
+                <label for="attachment">파일첨부:</label>
+                <input type="file" id="attachment" name="attachment">
+                <br>
+
+                <button type="button" onclick="addExperience()">경력 추가</button>
+                <button type="button" onclick="closePopupForm()">취소</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openPopupForm() {
+            document.getElementById("popupForm").style.display = "block";
+        }
+    
+        function closePopupForm() {
+            document.getElementById("popupForm").style.display = "none";
+            document.getElementById("careerForm").reset();
+        }
+    
+        function addExperience() {
+            var form = document.getElementById("careerForm");
+            var table = document.getElementById("experienceTable").getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow(table.rows.length);
+    
+            var division = form.elements["division"].value;
+            var startDate = form.elements["startDate"].value;
+            var endDate = form.elements["endDate"].value;
+            var content = form.elements["content"].value;
+            var attachment = form.elements["attachment"].value;
+    
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+    
+            cell1.innerHTML = division;
+            cell2.innerHTML = startDate + " - " + endDate;
+            cell3.innerHTML = content;
+            cell4.innerHTML = attachment ? "Yes" : "No";
+    
+            closePopupForm();
+        }
+    </script>
+
+    
+</body>
+
+</html>

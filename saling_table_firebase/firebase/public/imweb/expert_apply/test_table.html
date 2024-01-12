@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이력서 양식</title>
+
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="resumeForm" onsubmit="submitForm(event)">
+        <!-- ... (이전 코드 부분은 동일) ... -->
+
+        <div id="experienceTableDiv">
+            <h2>경력사항 테이블</h2>
+            <table id="experienceTable">
+                <thead>
+                    <tr>
+                        <th>구분</th>
+                        <th>기간</th>
+                        <th>내용</th>
+                        <th>파일첨부</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 경력사항이 추가될 때 여기에 추가될 것입니다. -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 이 부분이 추가되었습니다 -->
+        <label for="tableContent">테이블 내용:</label><br>
+        <textarea id="tableContent" name="tableContent" rows="4" cols="50" readonly></textarea><br>
+
+        <input type="submit" value="제출">
+    </form>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // 기본 제출 동작 막기
+
+            // 양식에서 입력된 정보 가져오기
+            const name = document.getElementById("name").value;
+            const experience = document.getElementById("experience").value;
+            const detailedExperience = document.getElementById("detailedExperience").value;
+            const education = document.getElementById("education").value;
+            const skills = document.getElementById("skills").value;
+            const selfIntroduction = document.getElementById("selfIntroduction").value;
+            const contact = document.getElementById("contact").value;
+
+            // 테이블 내용 가져오기
+            const table = document.getElementById("experienceTable");
+            const rows = table.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+            const tableData = [];
+
+            for (let i = 0; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName("td");
+                const rowData = [];
+
+                for (let j = 0; j < cells.length; j++) {
+                    rowData.push(cells[j].innerText);
+                }
+
+                tableData.push(rowData);
+            }
+
+            // 테이블 내용을 문자열로 변환
+            const tableContentString = JSON.stringify(tableData);
+
+            // 테이블 내용을 textarea에 삽입
+            document.getElementById("tableContent").value = tableContentString;
+
+            // 여기서 서버로 데이터 전송 또는 다른 작업 수행
+            // 실제로는 서버 측에서 데이터를 처리해야 합니다.
+
+            // 경고창으로 입력된 정보와 테이블 내용 보여주기 (테스트용)
+            alert(
+                `이름: ${name}\n경력: ${experience}\n상세 경력: ${detailedExperience}\n학력: ${education}\n기술 및 역량: ${skills}\n자기 소개: ${selfIntroduction}\n연락처: ${contact}\n\n테이블 내용:\n${tableContentString}`
+            );
+        }
+    </script>
+</body>
+
+</html>
