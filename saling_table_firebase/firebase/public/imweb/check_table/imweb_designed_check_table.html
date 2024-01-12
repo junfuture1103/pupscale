@@ -136,7 +136,7 @@
         position: fixed;
         bottom: 0;
         right: 0;
-        width: 250px; /* 오른쪽에 붙은 영역의 너비 조절 */
+        width: 450px; /* 오른쪽에 붙은 영역의 너비 조절 */
         background-color: #f0f0f0;
         border-left: 1px solid #ccc;
         padding: 10px;
@@ -170,6 +170,8 @@
     <ul id="product-list"></ul>
     <p>Total: <span id="total-price">$0.00</span></p>
 </div>
+
+<!-- 달러버전 -->
 
 <script>
     var cart = [];
@@ -218,5 +220,164 @@
 
         // 선택한 물건의 정보를 출력
         console.log(`Removed from Cart: ${productName} - $${productPrice.toFixed(2)}`);
+    }
+</script>
+
+<!-- 원 버전 -->
+
+<script>
+    var cart = [];
+    var totalPrice = 0;
+
+    function formatCurrency(price) {
+        // Format the price as Korean Won (₩) with commas
+        return '₩' + price.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+
+    function addToCart(productName, productPrice) {
+        // 선택한 물건을 리스트에 추가
+        var productList = document.getElementById("product-list");
+        var listItem = document.createElement("li");
+        listItem.className = "product-item";
+        listItem.innerHTML = `
+            <span>${productName}</span>
+            <span>${formatCurrency(productPrice)}</span>
+            <span class="remove-btn" onclick="removeFromCart('${productName}', ${productPrice})">Remove</span>`;
+        productList.appendChild(listItem);
+
+        // 선택한 물건의 정보를 카트에 추가
+        cart.push({ name: productName, price: productPrice });
+
+        // 선택한 물건의 총 가격 계산 및 업데이트
+        totalPrice += productPrice;
+        document.getElementById("total-price").textContent = formatCurrency(totalPrice);
+
+        // 선택한 물건의 정보를 출력
+        console.log(`Added to Cart: ${productName} - ${formatCurrency(productPrice)}`);
+    }
+
+    function removeFromCart(productName, productPrice) {
+        // 선택한 물건을 카트에서 제거
+        cart = cart.filter(item => item.name !== productName);
+
+        // 선택한 물건의 리스트에서 제거
+        var productList = document.getElementById("product-list");
+        var items = productList.getElementsByClassName("product-item");
+        for (var i = 0; i < items.length; i++) {
+            var item = items[i];
+            if (item.textContent.includes(productName)) {
+                item.remove();
+                break;
+            }
+        }
+
+        // 선택한 물건의 총 가격에서 제거
+        totalPrice -= productPrice;
+        document.getElementById("total-price").textContent = formatCurrency(totalPrice);
+
+        // 선택한 물건의 정보를 출력
+        console.log(`Removed from Cart: ${productName} - ${formatCurrency(productPrice)}`);
+    }
+</script>
+
+<!-- 최종 -->
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+    }
+
+    #floating-container {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 450px; /* 오른쪽에 붙은 영역의 너비 조절 */
+        background-color: #f0f0f0;
+        border-left: 1px solid #ccc;
+        padding: 10px;
+        box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    #product-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .product-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .remove-btn {
+        cursor: pointer;
+        color: red;
+    }
+</style>
+
+
+
+<div id="floating-container">
+    <ul id="product-list"></ul>
+    <p>Total: <span id="total-price">₩0</span></p>
+</div>
+
+<script>
+    var cart = [];
+    var totalPrice = 0;
+
+    function formatCurrency(price) {
+        // Format the price as Korean Won (₩) with commas
+        return '₩' + price.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+
+    function addToCart(productName, productPrice) {
+        // 선택한 물건을 리스트에 추가
+        var productList = document.getElementById("product-list");
+        var listItem = document.createElement("li");
+        listItem.className = "product-item";
+        listItem.innerHTML = `
+            <span>${productName}</span>
+            <span>${formatCurrency(productPrice)}</span>
+            <span class="remove-btn" onclick="removeFromCart('${productName}', ${productPrice})">Remove</span>`;
+        productList.appendChild(listItem);
+
+        // 선택한 물건의 정보를 카트에 추가
+        cart.push({ name: productName, price: productPrice });
+
+        // 선택한 물건의 총 가격 계산 및 업데이트
+        totalPrice += productPrice;
+        document.getElementById("total-price").textContent = formatCurrency(totalPrice);
+
+        // 선택한 물건의 정보를 출력
+        console.log(`Added to Cart: ${productName} - ${formatCurrency(productPrice)}`);
+    }
+
+    function removeFromCart(productName, productPrice) {
+        // 선택한 물건을 카트에서 제거
+        cart = cart.filter(item => item.name !== productName);
+
+        // 선택한 물건의 리스트에서 제거
+        var productList = document.getElementById("product-list");
+        var items = productList.getElementsByClassName("product-item");
+        for (var i = 0; i < items.length; i++) {
+            var item = items[i];
+            if (item.textContent.includes(productName)) {
+                item.remove();
+                break;
+            }
+        }
+
+        // 선택한 물건의 총 가격에서 제거
+        totalPrice -= productPrice;
+        document.getElementById("total-price").textContent = formatCurrency(totalPrice);
+
+        // 선택한 물건의 정보를 출력
+        console.log(`Removed from Cart: ${productName} - ${formatCurrency(productPrice)}`);
     }
 </script>
