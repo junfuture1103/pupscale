@@ -1,3 +1,9 @@
+<style>
+    .horizon_container {
+        display: flex;
+    }
+</style>
+
 <div doz_type="row" doz_grid="12" class="doz_row"><div doz_type="grid" doz_grid="3" doz_clear="Y" class="col-dz col-dz-3   col-xdz-clear"><div doz_type="widget" id="w20240112a14174b853ff1"><div class="_widget_data _ds_animated_except" data-widget-name="여백" data-widget-type="padding" data-widget-parent-is-mobile="N"><div class="widget padding" data-height="28" style="margin-top:px; margin-bottom:px;">
 	<div id="padding_w20240112a14174b853ff1" style="width:100%; min-height:1px; height:28px; "></div>
 </div>
@@ -38,33 +44,71 @@
                             </label>
                             
                             <div class="phonenumber_wrap"><input type="tel" maxlength="4" class="_only_number  form-control inline-blocked _only_number_119149f336ccc" name="phonenumber1_119149f336ccc" placeholder="" value="" id="input_num_119149f336ccc" autocomplete="off"><span class="inline-blocked line">-</span><input type="tel" maxlength="4" class="_only_number  form-control inline-blocked _only_number_119149f336ccc" name="phonenumber2_119149f336ccc" placeholder="" value="" id="input_num_119149f336ccc" autocomplete="off"><span class="inline-blocked line">-</span><input type="tel" maxlength="4" class="_only_number  form-control inline-blocked _only_number_119149f336ccc " name="phonenumber3_119149f336ccc" placeholder="" value="" id="input_num_119149f336ccc" autocomplete="off"></div></div>
-						
-                        <div class="form-group" id="checkbox_82A05V5TN6" check-limit="0">
-                            <label for="" class="control-label">업무 경험 (경험한 업무 모두 체크)
-                                <i class="icon-required" aria-hidden="true"></i>
-                            </label>
                             
-                        <div class="checkbox checkbox-styled">
-                            <label><input type="checkbox" class="_checkbox" name="checkbox_82A05V5TN6[]" value="회계업무" autocomplete="off"><span>
-                            회계업무</span>
-                            </label>
-                        </div>
+                                <div class="form-group" id="checkbox_82A05V5TN6" check-limit="0">
+                                    <label for="" class="control-label">업무 경험 (경험한 업무 모두 체크)
+                                        <i class="icon-required" aria-hidden="true"></i>
+                                    </label>
+                                    
+                                    <div class = "horizon_container">
+                                        <div class="checkbox checkbox-styled">
+                                            <label><input type="checkbox" class="_checkbox" name="checkbox_82A05V5TN6[]" value="회계업무" autocomplete="off">
+                                                <span class>
+                                                    회계업무
+                                                </span>
+                                                <i class="icon fas fa-info-circle hoverable" onmouseover="showPopup('다음의 업무 중 경험한 업무가 있을 경우, [회계업무] 항목을 체크해주세요.<br><br> ⦁ 외부감사 대응 업무<br> ⦁ 내부회계관리 업무<br> ⦁ 회계결산 업무<br> ⦁ 기업 재무제표 작성 업무<br> ⦁ 주석 작성 업무<br> ⦁ 연결회계 업무<br> ⦁ 회계이슈 검토<br> ⦁ 회계전표 입력')" onmouseout="hidePopup()" aria-hidden="true"></i>
+                                            </label>
+
+                                        </div>
+                                        
+                                        <!-- 팝업 내용 -->
+                                        <div id="myPopup" class="popup"></div>
+                                    </div>
+                                    
+                                    <div class="checkbox checkbox-styled">
+                                        <label><input type="checkbox" class="_checkbox" name="checkbox_82A05V5TN6[]" value="세무업무" autocomplete="off"><span>
+                                            세무업무</span>
+                                        </label>
+                                        <i class="icon fas fa-info-circle hoverable" onmouseover="showPopup('다음의 업무 중 경험한 업무가 있을 경우, [세무업무] 항목을 체크해주세요.<br><br> ⦁ 외부감사 대응 업무<br> ⦁ 법인세 신고<br> ⦁ 부가세 신고<br> ⦁ 소득세 신고<br> ⦁ 원천세 신고<br> ⦁ 지방세 신고<br> ⦁ 세무조사 대응<br> ⦁ 세무리스크 검토<br> ⦁ 4대보험 업무')" onmouseout="hidePopup()" aria-hidden="true"></i>
+
+                                    </div>
+
+                                        
+                                    <div class="checkbox checkbox-styled">
+                                        <label><input type="checkbox" class="_checkbox" name="checkbox_82A05V5TN6[]" value="자금업무" autocomplete="off"><span>
+                                            자금업무</span>
+                                        </label>
+                                    
+                                        <i class="icon fas fa-info-circle hoverable" onmouseover="showPopup('다음의 업무 중 경험한 업무가 있을 경우, [자금업무] 항목을 체크해주세요.<br><br> ⦁ 자금예산업무<br> ⦁ 자금실적 분석<br> ⦁ 자금집행 및 입출금 관리<br> ⦁ 외화관리<br> ⦁ 차입금 관리<br> ⦁ 자금결산<br> ⦁ 법인카드 관리<br> ⦁ CD 및 은행채 발행')" onmouseout="hidePopup()" aria-hidden="true"></i>
+
+                                    </div>
+                                        
+                                    <div class="checkbox checkbox-styled"><label><input type="checkbox" class="_checkbox" name="checkbox_82A05V5TN6[]" value="경영관리업무" autocomplete="off"><span>
+                                        경영관리업무</span></label>
+                                    
+                                        <i class="icon fas fa-info-circle hoverable" onmouseover="showPopup('다음의 업무 중 경험한 업무가 있을 경우, [경영관리 업무] 항목을 체크해주세요.<br><br> ⦁ 회계전표입력<br> ⦁ 적격증빙관리<br> ⦁ 임직원 비용정산 처리<br> ⦁ 세금계산서 관리<br> ⦁ 은행출납업무')" onmouseout="hidePopup()" aria-hidden="true"></i>
+
+                                    </div>
+                                        
+                                    <div class="checkbox checkbox-styled"><label><input type="checkbox" class="_checkbox" name="checkbox_82A05V5TN6[]" value="관리회계업무" autocomplete="off"><span>
+                                        관리회계업무</span></label>
+
+                                        <i class="icon fas fa-info-circle hoverable" onmouseover="showPopup('다음의 업무 중 경험한 업무가 있을 경우, [관리회계 업무] 항목을 체크해주세요.<br><br> ⦁ 장기/중기/단기 사업계획 수립<br> ⦁ 사업예산 관리<br> ⦁ 주요 성과지표 관리<br> ⦁ 관리회계 지표 산출 및 분석<br> ⦁ 사업별/프로젝트별 중장기 모델링, 실적 분석')" onmouseout="hidePopup()" aria-hidden="true"></i>
+
+                                    </div>
+                                        
+                                        
+                                    <div class="checkbox checkbox-styled"><label><input type="checkbox" class="_checkbox" name="checkbox_82A05V5TN6[]" value="인사총무업무" autocomplete="off"><span>
+                                        인사총무업무</span>
+                                        </label>
+                                        <i class="icon fas fa-info-circle hoverable" onmouseover="showPopup('다음의 업무 중 경험한 업무가 있을 경우, [인사총무 업무] 항목을 체크해주세요.<br><br> ⦁ 채용 전략 수립 및 브랜딩<br> ⦁ 입퇴사자 관리<br> ⦁ 근태 및 연차관리<br> ⦁ 급여, 4대보험, 원천세 등 Payroll 업무<br> ⦁ 법정의무교육 관리<br> ⦁ 인사관리, 성과평가, 직원 개발 및 교육 프로그램 운영<br> ⦁ 퇴직금 정산 및 퇴직연금 운용/관리<br> ⦁ 연말정산 작업 및 국세청 신고<br> ⦁ 인건비 운영 관리 및 인건비 분석<br> ⦁ 신규 입사자 온보딩 프로그램 기획 및 운영')" onmouseout="hidePopup()" aria-hidden="true"></i>
+
+                                    </div>
+                                
                         
-                        <div class="checkbox checkbox-styled">
-                            <label><input type="checkbox" class="_checkbox" name="checkbox_82A05V5TN6[]" value="세무업무" autocomplete="off"><span>
-                                세무업무</span>
-                            </label></div>
-                            
-                        <div class="checkbox checkbox-styled">
-                            <label><input type="checkbox" class="_checkbox" name="checkbox_82A05V5TN6[]" value="자금업무" autocomplete="off"><span>
-                                자금업무</span>
-                            </label></div>
-                            
-                        <div class="checkbox checkbox-styled"><label><input type="checkbox" class="_checkbox" name="checkbox_82A05V5TN6[]" value="경영관리업무" autocomplete="off"><span>
-                            경영관리업무</span></label></div>
-                            
-                            <div class="checkbox checkbox-styled"><label><input type="checkbox" class="_checkbox" name="checkbox_82A05V5TN6[]" value="관리회계업무" autocomplete="off"><span>관리회계업무</span></label></div><div class="checkbox checkbox-styled"><label><input type="checkbox" class="_checkbox" name="checkbox_82A05V5TN6[]" value="인사총무업무" autocomplete="off"><span>인사총무업무</span></label></div></div>
-                            
+
+                            </div>
+                                
                         <div class="form-group" id="select_2xs01W5848">
                             <label for="input_select_2xs01W5848" class="control-label">
                                 경력<i class="icon-required" aria-hidden="true"></i>
@@ -146,7 +190,7 @@
 
 
 					<div class="form text-center">                        
-                        <button type="button" class="btn btn-primary _input_form_submit" onclick="submitForm(event)">등록 jun</button>
+                        <button type="button" class="btn btn-primary _input_form_submit" onclick="submitForm(event)">등록 </button>
                     </div>
         </div>
 
