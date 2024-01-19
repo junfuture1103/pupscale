@@ -6,44 +6,31 @@
 					<ul id="cart_menu">
 	<div class="clearfix cart-menu-slide">
 					<li class="  active ">
-								<a href="/shop_mypage/?m2=order" class="body_font_color_50"><span>test</span></a>
+								<a href="/shop_mypage/?m2=order" class="body_font_color_50"><span>Main</span></a>
 			</li>
 				                            <li class=" ">
-                    <a href="/shop_mypage/?m2=wish_list" class="body_font_color_50"><span>위시</span></a>
+                    <a href="/shop_mypage/?m2=wish_list" class="body_font_color_50"><span>Expert Certification</span></a>
                 </li>
 													<li class=" ">
-					<a href="/shop_cart" class="body_font_color_50"><span>장바구니</span></a>
+					<a href="/shop_cart" class="body_font_color_50"><span>PUPPLE+R 업무관리</span></a>
 				</li>
-			            			<li class=" ">
-								<a href="/shop_mypage/?m2=cancel" class="body_font_color_50"><span>취소/교환/반품</span></a>
-			</li>
-			<li class="">
-				<a href="/shop_mypage/?m2=qna" class="body_font_color_50"><span>1:1 문의</span></a>
-			</li>
 			</div>
 </ul>
+
 				</div>
 				<div class="col-md-2 col-sm-12 hidden-xs hidden-sm left-menu">
 					<ul>
 						<li class="on">
-														<a href="/shop_mypage/?m2=order" class="text-gray-dark _fade_link">주문/예약 <span class="hidden-xs">조회</span></a>
+							<a href="/shop_mypage/?m2=order" class="text-gray-dark _fade_link">Main</a>
 						</li>
-													<li class="">
-								<a href="/shop_mypage/?m2=wish_list" class="text-gray-dark _fade_link">위시 <span class="hidden-xs">리스트</span></a>
-							</li>
-														<li class="">
-																<a href="/shop_mypage/?m2=cancel" class="text-gray-dark _fade_link">취소/교환/반품</a>
-							</li>
-                            																											<li class="">
-								<a href="/shop_mypage/?m2=qna" class="text-gray-dark _fade_link">1:1 문의</a>
-							</li>
-												<li>
-							<a href="javascript:;" onclick="SITE_MEMBER.editProfile('L3Nob3BfbXlwYWdlP3ByZXZpZXdfbW9kZT0x');" class="text-gray-dark _fade_link">정보 수정</a>
-						</li>
-						<li>
-							<a href="javascript:" onclick="SITE_MEMBER.openGoodbye();" class="text-gray-dark _fade_link">회원탈퇴</a>
-						</li>
-					</ul>
+                        <li class="">
+                            <a href="/shop_mypage/?m2=wish_list" class="text-gray-dark _fade_link">Certification<span class="hidden-xs">Expert </span></a>
+                        </li>
+                        <li class="">
+                            <a href="/shop_mypage/?m2=cancel" class="text-gray-dark _fade_link">업무관리<span class="hidden-xs">PUPPLE+R </span></a>
+                        </li>
+
+                    </ul>
 				</div>
 				<div class="col-md-10 col-sm-12">
 											<div class="head bg-bright">
@@ -51,7 +38,8 @@
 									<div class="img-view table-cell vertical-middle">
 										<div class="tabled full-width">
 											<div class="tumbs table-cell vertical-middle ">
-												<a href="javascript:;" onclick="SITE_MEMBER.editProfile('L3Nob3BfbXlwYWdlP3ByZXZpZXdfbW9kZT0x');">
+												<!-- <a href="javascript:;" onclick="SITE_MEMBER.editProfile('L3Nob3BfbXlwYWdlP3ByZXZpZXdfbW9kZT0x');"> -->
+												<a href="javascript:;" onclick="openModal();">
 													<div class="profile-container">
                                                         <div id="mypage_profile_img" class="img-circle" style="position: relative; width: 85px; height: 85px; background: url(/common/img/default_profile.png) 50% 50% / cover no-repeat;">
                                                             <!-- 내용을 원하는 대로 채우세요 -->
@@ -174,10 +162,37 @@
             text-decoration: underline;
             color: blue;
         }
+
+            
+        /* 모달 스타일 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+    
+        /* 모달 닫기 버튼 스타일 */
+        .modal-close {
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
     
     </style>
     
 
+<!-- 모달 -->
+<div id="myModal" class="modal">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <p>안녕하세요! 이것은 간단한 모달입니다.</p>
+</div>
 
 
 <div class="option" onclick="changeColor(0)">옵션 1</div>
@@ -185,12 +200,30 @@
 <div class="option" onclick="changeColor(2)">옵션 3</div>
 
 <script>
-  var colors = ["red", "yellow", "green"];
-  var currentIndex = 0;
+    var colors = ["red", "yellow", "green"];
+    var currentIndex = 0;
 
-  function changeColor(index) {
-    var circle = document.getElementById("circle");
-    currentIndex = index;
-    circle.style.backgroundColor = colors[currentIndex];
-  }
+    function changeColor(index) {
+        var circle = document.getElementById("circle");
+        currentIndex = index;
+        circle.style.backgroundColor = colors[currentIndex];
+    }
+
+    // 모달 열기 함수
+    function openModal() {
+        document.getElementById('myModal').style.display = 'block';
+    }
+
+    // 모달 닫기 함수
+    function closeModal() {
+        document.getElementById('myModal').style.display = 'none';
+    }
+
+    // 모달 외부 클릭 시 닫기
+    window.onclick = function(event) {
+    var modal = document.getElementById('myModal');
+        if (event.target == modal) {
+        closeModal();
+        }
+    }
 </script>
