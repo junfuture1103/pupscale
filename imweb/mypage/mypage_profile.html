@@ -1,0 +1,196 @@
+<div doz_type="grid" doz_grid="12" class="col-dz col-dz-12"><div doz_type="widget" id="w202310268af2cb8d3eaeb"><div class="_widget_data _ds_animated_except" data-widget-name="쇼핑 마이페이지" data-widget-type="shop_mypage" data-widget-parent-is-mobile="N">	
+	<div class="shop-content mypage">
+		<div class="container-fluid">
+			<div class="row show-grid">
+				<div class="left-menu hidden-lg hidden-md">
+					<ul id="cart_menu">
+	<div class="clearfix cart-menu-slide">
+					<li class="  active ">
+								<a href="/shop_mypage/?m2=order" class="body_font_color_50"><span>test</span></a>
+			</li>
+				                            <li class=" ">
+                    <a href="/shop_mypage/?m2=wish_list" class="body_font_color_50"><span>위시</span></a>
+                </li>
+													<li class=" ">
+					<a href="/shop_cart" class="body_font_color_50"><span>장바구니</span></a>
+				</li>
+			            			<li class=" ">
+								<a href="/shop_mypage/?m2=cancel" class="body_font_color_50"><span>취소/교환/반품</span></a>
+			</li>
+			<li class="">
+				<a href="/shop_mypage/?m2=qna" class="body_font_color_50"><span>1:1 문의</span></a>
+			</li>
+			</div>
+</ul>
+				</div>
+				<div class="col-md-2 col-sm-12 hidden-xs hidden-sm left-menu">
+					<ul>
+						<li class="on">
+														<a href="/shop_mypage/?m2=order" class="text-gray-dark _fade_link">주문/예약 <span class="hidden-xs">조회</span></a>
+						</li>
+													<li class="">
+								<a href="/shop_mypage/?m2=wish_list" class="text-gray-dark _fade_link">위시 <span class="hidden-xs">리스트</span></a>
+							</li>
+														<li class="">
+																<a href="/shop_mypage/?m2=cancel" class="text-gray-dark _fade_link">취소/교환/반품</a>
+							</li>
+                            																											<li class="">
+								<a href="/shop_mypage/?m2=qna" class="text-gray-dark _fade_link">1:1 문의</a>
+							</li>
+												<li>
+							<a href="javascript:;" onclick="SITE_MEMBER.editProfile('L3Nob3BfbXlwYWdlP3ByZXZpZXdfbW9kZT0x');" class="text-gray-dark _fade_link">정보 수정</a>
+						</li>
+						<li>
+							<a href="javascript:" onclick="SITE_MEMBER.openGoodbye();" class="text-gray-dark _fade_link">회원탈퇴</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-10 col-sm-12">
+											<div class="head bg-bright">
+							<div class="my-theme tabled full-width">
+									<div class="img-view table-cell vertical-middle">
+										<div class="tabled full-width">
+											<div class="tumbs table-cell vertical-middle ">
+												<a href="javascript:;" onclick="SITE_MEMBER.editProfile('L3Nob3BfbXlwYWdlP3ByZXZpZXdfbW9kZT0x');">
+													<div class="profile-container">
+                                                        <div id="mypage_profile_img" class="img-circle" style="position: relative; width: 85px; height: 85px; background: url(/common/img/default_profile.png) 50% 50% / cover no-repeat;">
+                                                            <!-- 내용을 원하는 대로 채우세요 -->
+                                                        </div>
+                                                        <div id="circle" class="status-circle circle" style="position: absolute; bottom: 0; right: 0;"></div>
+                                                    </div>
+
+                                                    <span class="sr-only">정보 수정</span>
+												</a>
+											</div>
+                                            
+                                            <div class="nick text-default-dark table-cell vertical-middle no-margin-top">
+																								<span>관리자 님 안녕하세요.</span>
+
+												<div class="body_font_color_50 text-15" id="order_total_price">누적 구매금액: 0원</div>
+																							</div>
+										</div>
+									</div>
+																	                                    															</div>
+						</div>
+						<h6 class="hidden-sm hidden-xs text-default-dark">주문 조회</h6>
+	<div class="table-wrap" id="shop_mypage_orderlist" style="display: none">
+	</div>
+	<div style="font-size:15px; padding: 70px; text-align: center;" class="body_font_color_40" id="shop_mypage_orderlist_empty">주문 내역이 없습니다.</div>
+
+	<div style="font-size:15px; padding: 15px;" class="table-wrap text-center">
+		<a href="javascript:;" id="shop_mypage_orderlist_more" onclick="SITE_SHOP_MYPAGE.getOrderList('order')" style="display: none;">더보기 <i aria-hidden="true" style="margin-left:2px" class="btm bt-plus-circle"></i></a>
+	</div>
+
+	
+					</div>
+			</div>
+		</div>
+	</div>
+	
+	</div></div></div>
+    <style>
+        .container {
+          position: relative;
+        }
+    
+        .div1, .div2 {
+          width: 100px;
+          height: 100px;
+          position: absolute;
+        }
+    
+        .div1 {
+          background-color: #ff0000;
+        }
+    
+        .div2 {
+          background-color: #00ff00;
+          top: 10px;
+          left: 10px;
+        }
+      </style>
+
+    <style>
+        .container {
+            display: flex;
+        }
+    
+        .profile-container {
+            margin-right: 20px; /* 간격 조절을 위해 마진 추가 */
+            position: relative;
+            display: inline-block;
+        }
+        
+        .profile-img{
+            position:absolute;
+        }
+
+        .flex-container {
+            display: inline-block;
+        }
+    
+        .profile-image {
+            width: 100px; /* 예제로 지정한 이미지 너비 */
+            height: 100px; /* 예제로 지정한 이미지 높이 */
+            border-radius: 50%; /* 이미지를 동그라미로 만들어줌 */
+            border: 2px solid rgb(0, 0, 0); /* 동그라미 테두리 스타일 설정 */
+            overflow: hidden; /* 이미지를 동그라미 모양으로 자르기 위해 필요 */
+        }
+    
+        .profile-image img {
+            width: 100%; /* 이미지를 부모 요소에 꽉 채우기 */
+            height: auto; /* 가로 비율 유지 */
+            border-radius: 50%; /* 이미지를 동그라미로 만들어줌 */
+            display: block;
+        }
+    
+        .status-circle {
+            position: absolute;
+            background-color: green; /* 여기에 상태에 따른 배경색을 지정하세요 */
+            border-radius: 50%;
+            border: 2px solid white; /* 동그라미 테두리 스타일 설정 */
+            color: white;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .circle {
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 2.5px solid white; /* 동그라미 테두리 스타일 설정 */
+            cursor: pointer;
+            background-color: red; /* 초기 색상 설정 */
+        }
+    
+        .option {
+            margin: 5px;
+            cursor: pointer;
+            text-decoration: underline;
+            color: blue;
+        }
+    
+    </style>
+    
+
+
+
+<div class="option" onclick="changeColor(0)">옵션 1</div>
+<div class="option" onclick="changeColor(1)">옵션 2</div>
+<div class="option" onclick="changeColor(2)">옵션 3</div>
+
+<script>
+  var colors = ["red", "yellow", "green"];
+  var currentIndex = 0;
+
+  function changeColor(index) {
+    var circle = document.getElementById("circle");
+    currentIndex = index;
+    circle.style.backgroundColor = colors[currentIndex];
+  }
+</script>

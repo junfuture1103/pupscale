@@ -1,0 +1,73 @@
+<style>
+    .circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin: 10px;
+      cursor: pointer;
+      border: 1px solid rgb(0, 0, 0);
+      background-color: red; /* 초기 색상 설정 */
+    }
+
+    .option {
+      margin: 5px;
+      cursor: pointer;
+      text-decoration: underline;
+      color: blue;
+    }
+
+    .flex-container {
+        display: flex;
+        align-items: center; /* 세로 중앙 정렬 */
+      }
+</style>
+
+<div doz_type="grid" doz_grid="6" class="col-dz col-dz-6"><div doz_type="widget" id="w20240116de5f75f095599"><div class="_widget_data " data-widget-name="텍스트" data-widget-type="text" data-widget-anim="none" data-widget-anim-duration="0.7" data-widget-anim-delay="0" data-widget-parent-is-mobile="N">
+	<div doz_type="text" class="widget _text_wrap widget_text_wrap fr-view " id="text_w20240116de5f75f095599">
+		
+		<div class="text_bg_color" style="background-color: #ffffff"></div>		
+
+        <div class="text-table holder">
+            <div>
+                <p>
+                    <span style="color: rgb(0, 120, 255); font-size: 18px;">
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Expert
+                    </span>
+                </p>
+                
+                <p>
+
+                    <div class="flex-container">
+                        <span style="font-size: 24px;">
+                          <strong>000 님</strong>
+                        </span>
+                        <div id="circle" class="circle"></div>
+                        <span>안녕하세요!</span>
+                      </div>
+                    
+                </p>
+                
+                <p>
+                    <br>
+                </p>
+            </div>
+        </div>		
+	</div>
+	
+</div></div></div>
+
+
+<div class="option" onclick="changeColor(0)">옵션 1</div>
+<div class="option" onclick="changeColor(1)">옵션 2</div>
+<div class="option" onclick="changeColor(2)">옵션 3</div>
+
+<script>
+  var colors = ["red", "yellow", "green"];
+  var currentIndex = 0;
+
+  function changeColor(index) {
+    var circle = document.getElementById("circle");
+    currentIndex = index;
+    circle.style.backgroundColor = colors[currentIndex];
+  }
+</script>
