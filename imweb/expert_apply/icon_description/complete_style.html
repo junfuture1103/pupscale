@@ -1,0 +1,42 @@
+<style>
+    /* 팝업의 초기 상태를 숨김 */
+  .popup {
+	  padding: 15px 20px;
+	  background-color: #f0f0f0;
+	  border-radius: 5px;
+      width: 500px; /* 오른쪽에 붙은 영역의 너비 조절 */
+	  left: 140px;
+	  color: black;
+	  z-index: 9999; /* 적절한 값을 설정해 주세요 */
+	  display: none; /* 초기에는 숨김 */
+  }
+  
+  .horizon_container {
+	  display: flex;
+  }
+</style>
+
+<script>
+    // 팝업을 보여주는 함수
+    function showPopup(description, event) {
+        var popup = document.getElementById("myPopup");
+
+        // 팝업 내용 설정
+        popup.innerHTML = description;
+
+        // 팝업 위치 설정
+        var iconRect = event.target.getBoundingClientRect();
+        popup.style.top = iconRect.top + "px";
+        //popup.style.left = iconRect.right + -200 + "px";
+
+        // 팝업 표시
+        popup.style.display = "block";
+    }
+
+
+    // 팝업을 숨기는 함수
+    function hidePopup() {
+        var popup = document.getElementById("myPopup");
+        popup.style.display = "none";
+    }
+</script>
