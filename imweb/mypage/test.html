@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>겹친 Div 예제</title>
+  <style>
+    .container {
+      position: relative;
+    }
+
+    .div1, .div2 {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+    }
+
+    .div1 {
+      background-color: #ff0000;
+    }
+
+    .div2 {
+      background-color: #00ff00;
+      top: 10px;
+      left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="div1"></div>
+    <div class="div2"></div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .hover-text {
+            display: inline-block;
+            position: relative;
+        }
+
+        .popup {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 10px;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<p class="hover-text" onmouseover="showPopup('첫 번째 문장 설명입니다.')" onmouseout="hidePopup()">첫 번째 문장</p>
+<div id="popup1" class="popup"></div>
+
+<p class="hover-text" onmouseover="showPopup('두 번째 문장 설명입니다.')" onmouseout="hidePopup()">두 번째 문장</p>
+<div id="popup2" class="popup"></div>
+
+<p class="hover-text" onmouseover="showPopup('세 번째 문장 설명입니다.')" onmouseout="hidePopup()">세 번째 문장</p>
+<div id="popup3" class="popup"></div>
+
+<script>
+    function showPopup(text) {
+        let popup = document.createElement("div");
+        popup.className = "popup";
+        popup.innerHTML = text;
+
+        let hoverText = event.target;
+        hoverText.appendChild(popup);
+
+        popup.style.display = "block";
+    }
+
+    function hidePopup() {
+        let popups = document.querySelectorAll(".popup");
+        popups.forEach(popup => {
+            popup.remove();
+        });
+    }
+</script>
+
+</body>
+</html>

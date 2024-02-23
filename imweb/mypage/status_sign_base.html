@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin: 10px;
+      cursor: pointer;
+      background-color: red; /* 초기 색상 설정 */
+    }
+
+    .option {
+      margin: 5px;
+      cursor: pointer;
+      text-decoration: underline;
+      color: blue;
+    }
+  </style>
+  <title>색상 변경 동그라미</title>
+</head>
+<body>
+
+  <div class="option" onclick="changeColor(0)">옵션 1</div>
+  <div class="option" onclick="changeColor(1)">옵션 2</div>
+  <div class="option" onclick="changeColor(2)">옵션 3</div>
+
+  <div id="circle" class="circle"></div>
+
+  <script>
+    var colors = ["red", "yellow", "green"];
+    var currentIndex = 0;
+
+    function changeColor(index) {
+      var circle = document.getElementById("circle");
+      currentIndex = index;
+      circle.style.backgroundColor = colors[currentIndex];
+    }
+  </script>
+
+</body>
+</html>

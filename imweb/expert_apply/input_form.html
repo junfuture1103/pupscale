@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>경력사항 입력 폼</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        #popupForm {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <h2>경력사항 테이블</h2>
+    <button type="button" onclick="openPopupForm()">경력사항 추가</button>
+    <div id="popupForm">
+        <h2>경력사항 입력</h2>
+        <form id="careerForm">
+            <label for="division">구분:</label>
+            <select id="division" name="division">
+                <option value="회사">회사</option>
+                <option value="프리랜서">프리랜서</option>
+            </select>
+            <br>
+
+            <label for="startDate">기간:</label>
+            <input type="date" id="startDate" name="startDate">
+            <label for="endDate"> - </label>
+            <input type="date" id="endDate" name="endDate">
+            <br>
+
+            <label for="content">내용:</label>
+            <textarea id="content" name="content" rows="4" cols="50"></textarea>
+            <br>
+
+            <label for="attachment">파일첨부:</label>
+            <input type="file" id="attachment" name="attachment">
+            <br>
+
+            <button type="button" onclick="addExperience()">경력 추가</button>
+            <button type="button" onclick="closePopupForm()">취소</button>
+        </form>
+    </div>
+</div>
+
+<div id="experienceTableDiv">
+    <h2>경력사항 테이블</h2>
+    <table id="experienceTable">
+        <thead>
+            <tr>
+                <th>구분</th>
+                <th>기간</th>
+                <th>내용</th>
+                <th>파일첨부</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 경력사항이 추가될 때 여기에 추가될 것입니다. -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function openPopupForm() {
+        document.getElementById("popupForm").style.display = "block";
+    }
+
+    function closePopupForm() {
+        document.getElementById("popupForm").style.display = "none";
+        document.getElementById("careerForm").reset();
+    }
+
+    function addExperience() {
+        var form = document.getElementById("careerForm");
+        var table = document.getElementById("experienceTable").getElementsByTagName('tbody')[0];
+        var newRow = table.insertRow(table.rows.length);
+
+        var division = form.elements["division"].value;
+        var startDate = form.elements["startDate"].value;
+        var endDate = form.elements["endDate"].value;
+        var content = form.elements["content"].value;
+        var attachment = form.elements["attachment"].value;
+
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+        var cell3 = newRow.insertCell(2);
+        var cell4 = newRow.insertCell(3);
+
+        cell1.innerHTML = division;
+        cell2.innerHTML = startDate + " - " + endDate;
+        cell3.innerHTML = content;
+        cell4.innerHTML = attachment ? "Yes" : "No";
+
+        closePopupForm();
+    }
+</script>
+
+</body>
+</html>

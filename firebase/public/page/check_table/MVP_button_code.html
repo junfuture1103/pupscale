@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버튼 클릭 시 totalPrice 증가</title>
+</head>
+<body>
+
+<!-- 가격을 표시할 요소 -->
+<p>Total Price: <span id="totalPrice">0</span></p>
+
+<!-- 버튼들 -->
+<button id="option1" value="10000" onclick="updatePrice(this)">Button 1</button>
+<button id="option2" value="20000" onclick="updatePrice(this)">Button 2</button>
+<!-- ... (나머지 버튼들) -->
+
+<script>
+    // 현재 가격을 저장할 변수
+    let totalPrice = 0;
+
+    // 버튼 클릭 시 호출될 함수
+    function updatePrice(clickedButton) {
+        // 클릭된 버튼의 id와 value 값 가져오기
+        let buttonId = clickedButton.id;
+        let buttonValue = Number(clickedButton.value);
+
+        // totalPrice에 버튼의 value 더하기
+        totalPrice += buttonValue;
+
+        // 화면에 새로운 totalPrice 표시
+        document.getElementById("totalPrice").textContent = totalPrice;
+    }
+</script>
+
+</body>
+</html>
