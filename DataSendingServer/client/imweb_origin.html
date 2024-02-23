@@ -1,4 +1,3 @@
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <style>
     /* 스타일 추가 */
     .popup_label {
@@ -412,45 +411,12 @@ function submitForm(event) {
     // 실제로는 서버 측에서 데이터를 처리해야 합니다.
 
     // 경고창으로 입력된 정보와 테이블 내용 보여주기 (테스트용)
-
-    // 서버로 정보를 전송하는 함수
-    function sendDataToServer() {
-      const xhr = new XMLHttpRequest();
-      const url = 'http://101.79.9.58:3000/uploads'; // 서버 URL
-
-      // 전송할 데이터
-      const data = JSON.stringify({
-        name: name,
-        email: email,
-        phoneNumber: `${phoneNumber1}-${phoneNumber2}-${phoneNumber3}`,
-        experiences: selectedExperiences,
-        tableContent: tableContentString,
-        certification: certification
-      });
-
-      xhr.open('POST', url, true);
-      xhr.setRequestHeader('Content-Type', 'application/json');
-
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          // 서버로 데이터 전송 완료
-          console.log('데이터 전송 완료');
-        }
-      };
-
-      xhr.send(data);
-    }
-
-    // 경고창을 띄우고 데이터를 서버로 전송
     alert(
-      `이름: ${name}\n이메일: ${email}\n연락처: ${phoneNumber1}-${phoneNumber2}-${phoneNumber3}\n` +
-      `업무 경험: ${selectedExperiences.join(", ")}\n` +
-      `테이블 내용:\n${tableContentString}\n` +
-      `자격증: ${certification}`
+        `이름: ${name}\n이메일: ${email}\n연락처: ${phoneNumber1}-${phoneNumber2}-${phoneNumber3}\n` +
+        `업무 경험: ${selectedExperiences.join(", ")}\n` +
+        `테이블 내용:\n${tableContentString}\n`+
+        `자격증: ${certification}`
     );
-
-    // 서버로 데이터 전송
-    sendDataToServer();
 
     SITE_FORM.confirmInputForm('w20231122ce2ff8f0d5eba','N');
 }
